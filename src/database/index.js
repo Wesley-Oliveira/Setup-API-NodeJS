@@ -13,12 +13,13 @@ class Database {
         // Conexão do banco com os models
         this.connection = new Sequelize(databaseConfig);
 
-        models
+        // Remover comentário quando houver relacionamento entre entidades
+        /* models
             .map((model) => model.init(this.connection))
             .map(
                 (model) =>
                     model.associate && model.associate(this.connection.models)
-            );
+            ); */
     }
 }
 
