@@ -10,6 +10,10 @@ module.exports = {
                         type: Sequelize.DataTypes.UUID,
                         defaultValue: Sequelize.literal('uuid_generate_v4()'),
                     },
+	name: {
+                        type: Sequelize.STRING,
+                        allowNull: false,
+                    },
                     email: {
                         type: Sequelize.STRING,
                         unique: true,

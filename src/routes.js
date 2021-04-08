@@ -28,6 +28,7 @@ routes.post(
     celebrate({
         [Segments.BODY]: Joi.object().keys({
             email: Joi.string().required().email(),
+            name: Joi.string().required(),
             password_hash: Joi.string().required(),
         }),
     }),
@@ -57,6 +58,7 @@ routes.put(
             user_id: Joi.string().uuid().required(),
         }).unknown(),
         [Segments.BODY]: Joi.object().keys({
+            name: Joi.string().required(),
             email: Joi.string().required().email(),
             oldPassword: Joi.string().required(),
             password_hash: Joi.string().required(),
